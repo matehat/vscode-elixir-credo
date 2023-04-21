@@ -64,7 +64,7 @@ export function getProjectFolder(documentUri: vscode.Uri): string {
   const workspace = vscode.workspace.getWorkspaceFolder(documentUri)
 
   const mixProjectPath = workspace
-    ? findUp('mix.exs', {
+    ? findUp('.credo.exs', {
         startAt: path.dirname(documentUri.fsPath),
         stopAt: workspace.uri.fsPath,
       })
